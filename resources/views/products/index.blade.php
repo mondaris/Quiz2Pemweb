@@ -1,17 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-    <center><h1>Produk</h1></center>
-
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
-    <center>
-    <a href="{{ route('products.create') }}" class="btn btn-outline-primary mb-3">Tambahkan</a>
-    <a href="{{ route('products.available') }}" class="btn btn-outline-secondary mb-3">Stok Tersedia</a>
-    <a href="{{ route('products.unavailable') }}" class="btn btn-outline-danger mb-3">Stok Kosong</a>
-    </center>
-    <table class="table">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href=''>Shoes So</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('products.available') }}">Stok Tersedia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('products.unavailable') }}">Stok Kosong</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <h1 class="text-center">Daftar Produk</h1>
+    <a href="{{ route('products.create') }}" class="btn btn-outline-primary mb-3">+ Tambahkan</a>
+    <table class="table table-secondary table-striped table-hover">
         <thead>
             <tr>
                 <th>ID</th>
