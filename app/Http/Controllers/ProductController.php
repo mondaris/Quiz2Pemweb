@@ -24,11 +24,15 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
+        ],[
+            'name.required'=> 'Nama Harus Diisi',
+            'price.required'=> 'Harga Harus Diisi',
+            'stock.required'=> 'Stok Harus Diisi'
         ]);
 
         $product = Product::create($validatedData);
 
-        return redirect()->route('products.index')->with('success', 'Product created successfully.');
+        return redirect()->route('products.index')->with('success', 'Produk Berhasil Dibuat.');
     }
 
     public function show($id)
@@ -49,12 +53,16 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
+        ],[
+            'name.required'=> 'Nama Harus Diisi',
+            'price.required'=> 'Harga Harus Diisi',
+            'stock.required'=> 'Stok Harus Diisi'
         ]);
 
         $product = Product::findOrFail($id);
         $product->update($validatedData);
 
-        return redirect()->route('products.index')->with('success', 'Product updated successfully.');
+        return redirect()->route('products.index')->with('success', 'Produk Berhasil Diperbaharui.');
     }
 
     public function destroy($id)

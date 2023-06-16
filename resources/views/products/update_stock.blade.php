@@ -17,6 +17,7 @@
             <input type="number" name="stock" id="stock" class="form-control">
         </div>
 
-        <button type="submit" class="btn btn-primary">Perbaharui</button>
+        <button type="submit" class="btn btn-outline-primary">Perbaharui</button>
+        <a href="{{ route('products.index') }}" class="btn btn-outline-secondary">Cancel</a>
     </form>
 @endsection
