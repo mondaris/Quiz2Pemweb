@@ -27,7 +27,7 @@
             <label for="stock">Stok</label>
             <input type="number" class="form-control" id="stock" name="stock" value="{{ old('stock') }}">
         </div>
-        <button type="submit" class="btn btn-primary">Add</button>
-        <a href="{{ route('products.index') }}" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-primary">Tambah</button>
+        <a href="{{ route('products.index') }}" class="btn btn-secondary">Batal</a>
     </form>
 @endsection
